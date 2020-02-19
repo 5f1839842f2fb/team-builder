@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Reactstrap from 'reactstrap';
-import logo from './logo.svg';
 import './App.css';
-import TeamMemberCard from './TeamMemberCard'
+import TeamMemberCard from './TeamMemberCard';
+import MemberForm from './MemberForm';
 
 function App() {
   const [team, setTeam] = useState([{
@@ -16,6 +15,10 @@ function App() {
     role: 'Fake-end Fakegineer'
   }])
 
+  const addMember = (member) => {
+    setTeam([...team, member])
+  }
+
   return (
     <div className="App">
       <div className="cardDiv">
@@ -23,7 +26,9 @@ function App() {
         return <TeamMemberCard teamMember={element} key={Math.random()}/>
       })}
       </div>
-      
+      <div className="formDiv">
+        <MemberForm addMember={addMember}/>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Reactstrap, { Card, CardTitle, CardText, CardBody } from 'reactstrap';
+import { Card, CardTitle, CardText } from 'reactstrap';
 
 const TeamMemberCard = (props) => {
   return (
